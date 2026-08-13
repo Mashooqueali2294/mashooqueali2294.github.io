@@ -29,6 +29,7 @@
     background-position: center;
     background-attachment: fixed;
     position: relative;
+    overflow-x: hidden;
   }
 
   .bg-overlay {
@@ -50,16 +51,18 @@
   .navlinks a { text-decoration: none; color: var(--text-muted); font-size: 13px; font-weight: 600; text-transform: uppercase; transition: color 0.2s; padding-bottom: 5px; }
   .navlinks a:hover, .navlinks a.active { color: var(--accent); border-bottom: 3px solid var(--accent); }
 
-  .hero-grid { display: flex; align-items: center; min-height: 80vh; padding: 40px 0; }
-  .hero-content { flex: 1.2; padding-right: 40px; }
+  /* Hero section adjustments for larger image */
+  .hero-grid { display: flex; align-items: center; min-height: 85vh; padding: 20px 0 0 0; }
+  .hero-content { flex: 1; padding-right: 20px; z-index: 2; }
   .hero-content h1 { font-size: clamp(36px, 5vw, 56px); line-height: 1.1; color: var(--accent); margin-bottom: 24px; text-transform: uppercase; font-weight: 700; }
   .hero-content p { font-size: 18px; color: var(--text-muted); max-width: 480px; margin-bottom: 30px; }
   
   .btn { display: inline-block; background: #222; color: #fff; padding: 16px 40px; font-size: 13px; font-weight: 600; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
   .btn:hover { background: var(--accent); }
 
-  .hero-image { flex: 0.8; display: flex; justify-content: flex-end; align-items: flex-end; position: relative; }
-  .hero-image img { max-width: 100%; height: auto; max-height: 85vh; object-fit: contain; filter: drop-shadow(0px 20px 30px rgba(0,0,0,0.15)); }
+  /* Increased image size & container width */
+  .hero-image { flex: 1.2; display: flex; justify-content: flex-end; align-items: flex-end; position: relative; }
+  .hero-image img { width: 100%; max-width: 650px; height: auto; max-height: 85vh; object-fit: contain; filter: drop-shadow(0px 20px 30px rgba(0,0,0,0.15)); transform: scale(1.15); transform-origin: bottom right; }
 
   section { padding: 80px 0; border-top: 1px solid var(--border); }
   h2 { font-size: 32px; font-weight: 700; margin-bottom: 24px; text-transform: uppercase; color: var(--text-dark); }
@@ -99,10 +102,11 @@
   footer { text-align: center; padding: 40px 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); }
 
   @media (max-width: 880px) {
-    .hero-grid { flex-direction: column; text-align: center; padding-top: 60px; }
-    .hero-content { padding-right: 0; margin-bottom: 40px; }
+    .hero-grid { flex-direction: column; text-align: center; padding-top: 40px; }
+    .hero-content { padding-right: 0; margin-bottom: 30px; }
     .hero-content p { margin: 0 auto 30px auto; }
-    .hero-image { justify-content: center; }
+    .hero-image { justify-content: center; width: 100%; }
+    .hero-image img { transform: scale(1); max-width: 100%; }
     .grid-2 { grid-template-columns: 1fr; }
     .navlinks { display: none; }
   }
@@ -137,7 +141,6 @@
       <a href="#about" class="btn">ABOUT ME</a>
     </div>
     <div class="hero-image">
-      <!-- Updated image path to point to profile.png -->
       <img src="profile.png" alt="Mashooque Ali" id="user-profile-pic">
     </div>
   </div>
