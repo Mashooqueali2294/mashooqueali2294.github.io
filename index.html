@@ -7,7 +7,7 @@
 <meta name="description" content="Automation engineer specializing in n8n, AI agents, and API integrations.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<!-- FontAwesome Icons for WhatsApp Logo -->
+<!-- FontAwesome Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
   :root {
@@ -96,9 +96,50 @@
   .project-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 12px; flex-wrap: wrap; }
   .project-title { font-size: 20px; font-weight: 700; }
   
-  .pill { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; padding: 5px 12px; border-radius: 12px; white-space: nowrap; text-decoration: none; display: inline-block; font-weight: 500; }
-  .pill-live { background: rgba(70,194,160,0.15); color: #2B7A64; border: 1px solid rgba(70,194,160,.4); }
-  .pill-live:hover { background: rgba(70,194,160,0.25); }
+  /* HIGH-ATTENTION ANIMATED PILL BUTTONS */
+  .pill { 
+    font-family: 'IBM Plex Mono', monospace; 
+    font-size: 12px; 
+    letter-spacing: 0.05em; 
+    text-transform: uppercase; 
+    padding: 7px 16px; 
+    border-radius: 20px; 
+    white-space: nowrap; 
+    text-decoration: none; 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 8px; 
+    font-weight: 600; 
+    transition: all 0.3s ease;
+  }
+  
+  .pill-live { 
+    background: #00875A; 
+    color: #ffffff; 
+    border: 1px solid #00B377;
+    box-shadow: 0 0 12px rgba(0, 179, 119, 0.4);
+    animation: pulse-glow 2s infinite;
+  }
+
+  .pill-live:hover { 
+    background: #00B377; 
+    transform: scale(1.08);
+    box-shadow: 0 0 18px rgba(0, 179, 119, 0.7);
+    color: #fff;
+  }
+
+  /* Pulse Animation Keyframes */
+  @keyframes pulse-glow {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0, 179, 119, 0.6);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(0, 179, 119, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 179, 119, 0);
+    }
+  }
 
   .flow-line { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 16px 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
   .flow-step { background: rgba(0,0,0,0.04); border: 1px solid var(--border); padding: 4px 10px; border-radius: 4px; color: var(--text-muted); }
@@ -201,7 +242,7 @@
     <div class="project-card">
       <div class="project-head">
         <div class="project-title">HubSpot Lead Capture Automation</div>
-        <a href="hubspot-demo.mp4" target="_blank" class="pill pill-live">▶ Live demo</a>
+        <a href="hubspot-demo.mp4" target="_blank" class="pill pill-live"><i class="fa-solid fa-play"></i> Watch Demo</a>
       </div>
       <div class="flow-line">
         <span class="flow-step trigger">webhook: new lead</span><span class="flow-arrow">→</span>
@@ -219,7 +260,7 @@
     <div class="project-card">
       <div class="project-head">
         <div class="project-title">Daily Business Digest Agent</div>
-        <a href="digest-demo.mp4" target="_blank" class="pill pill-live">▶ Live demo</a>
+        <a href="digest-demo.mp4" target="_blank" class="pill pill-live"><i class="fa-solid fa-play"></i> Watch Demo</a>
       </div>
       <div class="flow-line">
         <span class="flow-step trigger">schedule: 9am daily</span><span class="flow-arrow">→</span>
@@ -237,7 +278,7 @@
     <div class="project-card">
       <div class="project-head">
         <div class="project-title">RAG Document Q&amp;A Agent</div>
-        <div class="pill pill-live" style="background: rgba(0,0,0,0.05); color: var(--text-muted); border-color: var(--border);">In progress</div>
+        <div class="pill" style="background: rgba(0,0,0,0.05); color: var(--text-muted); border: 1px solid var(--border);">In progress</div>
       </div>
       <div class="flow-line">
         <span class="flow-step trigger">PDF uploaded</span><span class="flow-arrow">→</span>
@@ -255,7 +296,7 @@
     <div class="project-card">
       <div class="project-head">
         <div class="project-title">WhatsApp AI Order Bot</div>
-        <a href="whatsapp-demo.mp4" target="_blank" class="pill pill-live">▶ Live client</a>
+        <a href="whatsapp-demo.mp4" target="_blank" class="pill pill-live"><i class="fa-solid fa-play"></i> Watch Demo</a>
       </div>
       <div class="flow-line">
         <span class="flow-step trigger">customer message</span><span class="flow-arrow">→</span>
@@ -273,7 +314,7 @@
     <div class="project-card">
       <div class="project-head">
         <div class="project-title">n8n Support Inbox Triage</div>
-        <div class="pill pill-live" style="background: rgba(0,0,0,0.05); color: var(--text-muted); border-color: var(--border);">Client work</div>
+        <div class="pill" style="background: rgba(0,0,0,0.05); color: var(--text-muted); border: 1px solid var(--border);">Client work</div>
       </div>
       <div class="flow-line">
         <span class="flow-step trigger">support email in</span><span class="flow-arrow">→</span>
@@ -291,7 +332,7 @@
     <div class="project-card">
       <div class="project-head">
         <div class="project-title">UK Company Intelligence Platform</div>
-        <div class="pill pill-live" style="background: rgba(0,0,0,0.05); color: var(--text-muted); border-color: var(--border);">Data pipeline</div>
+        <div class="pill" style="background: rgba(0,0,0,0.05); color: var(--text-muted); border: 1px solid var(--border);">Data pipeline</div>
       </div>
       <div class="flow-line">
         <span class="flow-step trigger">460K+ UK company records</span><span class="flow-arrow">→</span>
@@ -349,7 +390,6 @@
     
     <div class="contact-buttons">
       <a href="mailto:mashooque.automation@gmail.com" class="btn">✉ mashooque.automation@gmail.com</a>
-      <!-- WhatsApp Automation Button -->
       <a href="https://wa.me/923013814633?text=Hi%20Mashooque,%20I'm%20interested%20in%20WhatsApp%20automation." target="_blank" class="btn btn-whatsapp">
         <i class="fa-brands fa-whatsapp" style="font-size: 18px;"></i> Message automation on WhatsApp
       </a>
