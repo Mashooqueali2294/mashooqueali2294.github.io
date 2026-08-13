@@ -9,11 +9,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --accent: #9B5122; /* Matching the brown color from the reference image */
+    --accent: #9B5122; 
     --accent-hover: #7A3F19;
     --text-dark: #222222;
     --text-muted: #555555;
-    --bg-card: rgba(255, 255, 255, 0.75);
+    --bg-card: rgba(255, 255, 255, 0.85);
     --border: rgba(0, 0, 0, 0.1);
   }
 
@@ -24,7 +24,6 @@
     font-family: 'Montserrat', sans-serif;
     color: var(--text-dark);
     line-height: 1.6;
-    /* Laptops, Code, Workflows Background */
     background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
@@ -32,203 +31,80 @@
     position: relative;
   }
 
-  /* Light overlay to match the clean white design of the reference image */
   .bg-overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(245, 245, 245, 0.88);
-    backdrop-filter: blur(3px);
+    background: rgba(245, 245, 245, 0.90);
+    backdrop-filter: blur(4px);
     z-index: -1;
   }
 
-  .wrap {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 28px;
-  }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
 
-  /* Navigation matching the design */
-  nav {
-    padding: 30px 0;
-    border-bottom: 1px solid var(--border);
-  }
-  nav .wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .brand {
-    font-weight: 700;
-    font-size: 18px;
-    letter-spacing: 2px;
-    display: flex;
-    align-items: center;
-  }
-  .brand span {
-    color: var(--accent);
-    border: 2px solid var(--accent);
-    padding: 2px 6px;
-    margin-right: 8px;
-    font-size: 16px;
-  }
-  .navlinks {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-  }
-  .navlinks a {
-    text-decoration: none;
-    color: var(--text-muted);
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-    transition: color 0.2s;
-    padding-bottom: 5px;
-  }
-  .navlinks a:hover, .navlinks a.active {
-    color: var(--accent);
-    border-top: 3px solid var(--accent);
-    padding-top: 5px;
-  }
+  nav { padding: 30px 0; border-bottom: 1px solid var(--border); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-weight: 700; font-size: 18px; letter-spacing: 2px; display: flex; align-items: center; }
+  .brand span { color: var(--accent); border: 2px solid var(--accent); padding: 2px 6px; margin-right: 8px; font-size: 16px; }
+  
+  .navlinks { display: flex; gap: 30px; list-style: none; }
+  .navlinks a { text-decoration: none; color: var(--text-muted); font-size: 13px; font-weight: 600; text-transform: uppercase; transition: color 0.2s; padding-bottom: 5px; }
+  .navlinks a:hover, .navlinks a.active { color: var(--accent); border-bottom: 3px solid var(--accent); }
 
-  /* Hero Section */
-  .hero-grid {
-    display: flex;
-    align-items: center;
-    min-height: 80vh;
-    padding: 40px 0;
-  }
-  .hero-content {
-    flex: 1;
-    padding-right: 40px;
-  }
-  .hero-content h1 {
-    font-size: clamp(36px, 5vw, 56px);
-    line-height: 1.1;
-    color: var(--accent);
-    margin-bottom: 24px;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-  .hero-content p {
-    font-size: 18px;
-    color: var(--text-muted);
-    max-width: 450px;
-    margin-bottom: 30px;
-  }
-  .btn {
-    display: inline-block;
-    background: #222;
-    color: #fff;
-    padding: 16px 40px;
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-  .btn:hover {
-    background: var(--accent);
-  }
+  .hero-grid { display: flex; align-items: center; min-height: 80vh; padding: 40px 0; }
+  .hero-content { flex: 1.2; padding-right: 40px; }
+  .hero-content h1 { font-size: clamp(36px, 5vw, 56px); line-height: 1.1; color: var(--accent); margin-bottom: 24px; text-transform: uppercase; font-weight: 700; }
+  .hero-content p { font-size: 18px; color: var(--text-muted); max-width: 480px; margin-bottom: 30px; }
+  
+  .btn { display: inline-block; background: #222; color: #fff; padding: 16px 40px; font-size: 13px; font-weight: 600; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+  .btn:hover { background: var(--accent); }
 
-  .hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-  }
-  .hero-image img {
-    max-width: 100%;
-    height: auto;
-    max-height: 80vh;
-    object-fit: contain;
-  }
+  .hero-image { flex: 0.8; display: flex; justify-content: flex-end; align-items: flex-end; position: relative; }
+  .hero-image img { max-width: 100%; height: auto; max-height: 85vh; object-fit: contain; filter: drop-shadow(0px 20px 30px rgba(0,0,0,0.15)); }
 
-  /* Other Sections (Adapted for Light Theme) */
-  section {
-    padding: 80px 0;
-    border-top: 1px solid var(--border);
-  }
-  h2 {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 24px;
-    text-transform: uppercase;
-    color: var(--text-dark);
-  }
-  .eyebrow {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 10px;
-  }
+  section { padding: 80px 0; border-top: 1px solid var(--border); }
+  h2 { font-size: 32px; font-weight: 700; margin-bottom: 24px; text-transform: uppercase; color: var(--text-dark); }
+  
+  .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
 
-  .grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-  }
+  .grid-2 { display: grid; grid-template-columns: 1.3fr 1fr; gap: 50px; }
 
-  .project-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    padding: 30px;
-    margin-bottom: 20px;
-    backdrop-filter: blur(5px);
-  }
-  .project-title {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 15px;
-  }
-  .tag {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    background: rgba(0,0,0,0.05);
-    padding: 4px 10px;
-    border: 1px solid rgba(0,0,0,0.1);
-  }
+  .project-card { background: var(--bg-card); border: 1px solid var(--border); padding: 30px; margin-bottom: 25px; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: transform 0.2s; }
+  .project-card:hover { transform: translateY(-3px); border-color: rgba(0,0,0,0.2); }
+  
+  .project-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 12px; flex-wrap: wrap; }
+  .project-title { font-size: 20px; font-weight: 700; }
+  
+  .pill { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; padding: 5px 12px; border-radius: 12px; white-space: nowrap; text-decoration: none; display: inline-block; font-weight: 500; }
+  .pill-live { background: rgba(70,194,160,0.15); color: #2B7A64; border: 1px solid rgba(70,194,160,.4); }
+  .pill-live:hover { background: rgba(70,194,160,0.25); }
 
-  .stack-groups {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  .stack-group {
-    background: var(--bg-card);
-    padding: 24px;
-    border: 1px solid var(--border);
-  }
-  .stack-group h3 {
-    font-size: 14px;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 15px;
-  }
+  .flow-line { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 16px 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
+  .flow-step { background: rgba(0,0,0,0.04); border: 1px solid var(--border); padding: 4px 10px; border-radius: 4px; color: var(--text-muted); }
+  .flow-step.trigger { color: var(--accent); border-color: rgba(155, 81, 34, 0.3); }
+  .flow-step.output { color: #2B7A64; border-color: rgba(70,194,160,.35); }
+  .flow-arrow { color: rgba(0,0,0,0.2); }
 
-  footer {
-    text-align: center;
-    padding: 40px 0;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    color: var(--text-muted);
-    border-top: 1px solid var(--border);
-  }
+  .project-desc { list-style: none; margin-bottom: 18px; }
+  .project-desc li { color: var(--text-muted); font-size: 14px; padding-left: 18px; position: relative; margin-bottom: 6px; }
+  .project-desc li::before { content: "—"; position: absolute; left: 0; color: rgba(0,0,0,0.3); }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { font-family: 'IBM Plex Mono', monospace; font-size: 11px; background: rgba(0,0,0,0.03); padding: 4px 10px; border: 1px solid rgba(0,0,0,0.08); border-radius: 4px; }
+
+  .stack-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+  .stack-group { background: var(--bg-card); padding: 24px; border: 1px solid var(--border); border-radius: 4px; }
+  .stack-group h3 { font-size: 13px; text-transform: uppercase; color: var(--accent); margin-bottom: 15px; font-weight: 700; }
+  .stack-chip { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 12px; background: rgba(0,0,0,0.04); border: 1px solid var(--border); padding: 6px 10px; border-radius: 4px; color: var(--text-dark); margin: 0 4px 6px 0; }
+
+  footer { text-align: center; padding: 40px 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); }
 
   @media (max-width: 880px) {
-    .hero-grid { flex-direction: column; text-align: center; }
+    .hero-grid { flex-direction: column; text-align: center; padding-top: 60px; }
     .hero-content { padding-right: 0; margin-bottom: 40px; }
     .hero-content p { margin: 0 auto 30px auto; }
     .hero-image { justify-content: center; }
-    .navlinks { display: none; } /* Simplified mobile nav for now */
+    .grid-2 { grid-template-columns: 1fr; }
+    .navlinks { display: none; }
   }
 </style>
 </head>
@@ -238,12 +114,12 @@
 
 <nav>
   <div class="wrap">
-    <div class="brand"><span>M.A!</span> PROFILE</div>
+    <div class="brand"><span>M.A</span> PROFILE</div>
     <ul class="navlinks">
       <li><a href="#" class="active">HOME</a></li>
       <li><a href="#about">ABOUT</a></li>
-      <li><a href="#builds">BUILDS</a></li>
-      <li><a href="#stack">STACK</a></li>
+      <li><a href="#builds">WORK</a></li>
+      <li><a href="#stack">SKILLS</a></li>
       <li><a href="#contact">CONTACT ME</a></li>
     </ul>
   </div>
@@ -261,8 +137,8 @@
       <a href="#about" class="btn">ABOUT ME</a>
     </div>
     <div class="hero-image">
-      <!-- M.A! YAHAN APNA PHOTO LAGAYEIN -->
-      <img src="https://via.placeholder.com/500x700.png?text=Mashooque+Ali+Photo+Here" alt="Mashooque Ali" id="user-profile-pic">
+      <!-- Make sure 'image_bf9258.png' is in your folder (background removed, transparent PNG) -->
+      <img src="image_bf9258.png" alt="Mashooque Ali" id="user-profile-pic">
     </div>
   </div>
 </header>
@@ -275,13 +151,22 @@
       <p style="margin-bottom: 15px; color: var(--text-muted);">I'm a self-taught automation engineer based in Sindh, Pakistan. Over the past two years I've gone from learning Python line by line to shipping production automations for real clients — lead pipelines, AI ordering bots, CRM integrations, and document-intelligence systems.</p>
       <p style="color: var(--text-muted);">I work mostly with n8n, Python, and LLM APIs (Claude, OpenAI, Groq), and I care more about whether a system runs reliably at 3am with nobody watching than how it looks in a demo.</p>
     </div>
-    <div class="project-card" style="font-family: 'IBM Plex Mono', monospace; font-size: 13px;">
-      <p style="margin-bottom:10px;"><strong>Location:</strong> Sindh, Pakistan</p>
-      <p style="margin-bottom:10px;"><strong>Availability:</strong> Immediate · 30–40 hrs/wk</p>
-      <p style="margin-bottom:10px;"><strong>Mode:</strong> Remote / Freelance</p>
-      <p style="margin-bottom:10px;"><strong>Core Stack:</strong> n8n, Python, FastAPI</p>
-      <p style="margin-bottom:10px;"><strong>AI Stack:</strong> Claude, Groq, LangChain</p>
-      <p><strong>Education:</strong> BS Computer Science</p>
+    <div class="project-card" style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; display: flex; flex-direction: column; justify-content: center;">
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); padding: 10px 0;">
+        <span style="color: var(--text-muted);">location</span><strong>Sindh, Pakistan</strong>
+      </div>
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); padding: 10px 0;">
+        <span style="color: var(--text-muted);">availability</span><strong>Immediate · 30-40 hrs/wk</strong>
+      </div>
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); padding: 10px 0;">
+        <span style="color: var(--text-muted);">mode</span><strong>Remote / Freelance</strong>
+      </div>
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border); padding: 10px 0;">
+        <span style="color: var(--text-muted);">core_stack</span><strong>n8n, Python, FastAPI</strong>
+      </div>
+      <div style="display: flex; justify-content: space-between; padding: 10px 0;">
+        <span style="color: var(--text-muted);">ai_stack</span><strong>Claude, Groq, LangChain</strong>
+      </div>
     </div>
   </div>
 </section>
@@ -292,28 +177,115 @@
     <h2>The pipeline</h2>
     
     <div class="project-card">
-      <div class="project-title">HubSpot Lead Capture Automation</div>
-      <p style="color: var(--text-muted); font-size: 14px;">AI agent reasons about deal stage and priority instead of matching keywords. Tested end-to-end with bulk leads — contacts and deals created correctly in a single run.</p>
-      <div class="tags">
-        <span class="tag">n8n</span><span class="tag">HubSpot API</span><span class="tag">Groq LLM</span><span class="tag">Slack API</span>
+      <div class="project-head">
+        <div class="project-title">HubSpot Lead Capture Automation</div>
+        <!-- Restored Video Link -->
+        <a href="hubspot-demo.mp4" target="_blank" class="pill pill-live">▶ Live demo</a>
       </div>
+      <div class="flow-line">
+        <span class="flow-step trigger">webhook: new lead</span><span class="flow-arrow">→</span>
+        <span class="flow-step">AI classifies stage + priority</span><span class="flow-arrow">→</span>
+        <span class="flow-step">HubSpot contact/deal created</span><span class="flow-arrow">→</span>
+        <span class="flow-step output">Slack alert to team</span>
+      </div>
+      <ul class="project-desc">
+        <li>AI agent reasons about deal stage and priority instead of matching keywords</li>
+        <li>Tested end-to-end with bulk leads — contacts and deals created correctly in a single run</li>
+      </ul>
+      <div class="tags"><span class="tag">n8n</span><span class="tag">HubSpot API</span><span class="tag">Groq LLM</span><span class="tag">Slack API</span><span class="tag">Webhooks</span></div>
     </div>
 
     <div class="project-card">
-      <div class="project-title">WhatsApp AI Order Bot</div>
-      <p style="color: var(--text-muted); font-size: 14px;">Deployed for a real restaurant client — handles menu queries, orders, and confirmations autonomously. Cut manual order handling by 80%.</p>
-      <div class="tags">
-        <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">LangChain</span><span class="tag">WhatsApp Business API</span>
+      <div class="project-head">
+        <div class="project-title">Daily Business Digest Agent</div>
+        <!-- Restored Video Link -->
+        <a href="digest-demo.mp4" target="_blank" class="pill pill-live">▶ Live demo</a>
       </div>
+      <div class="flow-line">
+        <span class="flow-step trigger">schedule: 9am daily</span><span class="flow-arrow">→</span>
+        <span class="flow-step">Gmail fetch</span><span class="flow-arrow">→</span>
+        <span class="flow-step">AI classifies + logs to Sheets</span><span class="flow-arrow">→</span>
+        <span class="flow-step output">Slack digest</span>
+      </div>
+      <ul class="project-desc">
+        <li>Chains two AI agents together — classification, then summarization — across four connected services</li>
+        <li>Removes the need to manually scroll a cluttered inbox every morning</li>
+      </ul>
+      <div class="tags"><span class="tag">n8n</span><span class="tag">Gmail API</span><span class="tag">Google Sheets</span><span class="tag">Groq LLM</span><span class="tag">Slack API</span></div>
     </div>
-    
+
     <div class="project-card">
-      <div class="project-title">UK Company Intelligence Platform</div>
-      <p style="color: var(--text-muted); font-size: 14px;">Classifies company websites as active, inactive, or high-value opportunities at scale for 460K+ UK company records.</p>
-      <div class="tags">
-        <span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Python</span><span class="tag">Docker</span>
+      <div class="project-head">
+        <div class="project-title">RAG Document Q&amp;A Agent</div>
+        <div class="pill pill-live" style="background: rgba(0,0,0,0.05); color: var(--text-muted); border-color: var(--border);">In progress</div>
       </div>
+      <div class="flow-line">
+        <span class="flow-step trigger">PDF uploaded</span><span class="flow-arrow">→</span>
+        <span class="flow-step">chunked + embedded</span><span class="flow-arrow">→</span>
+        <span class="flow-step">vector search</span><span class="flow-arrow">→</span>
+        <span class="flow-step output">answer, grounded in the doc</span>
+      </div>
+      <ul class="project-desc">
+        <li>Answers come strictly from the document's content — not the model's general knowledge</li>
+        <li>Implements chunking, embeddings, and similarity search as an automated pipeline</li>
+      </ul>
+      <div class="tags"><span class="tag">n8n</span><span class="tag">Vector Embeddings</span><span class="tag">RAG</span><span class="tag">LangChain</span><span class="tag">Groq LLM</span></div>
     </div>
+
+    <div class="project-card">
+      <div class="project-head">
+        <div class="project-title">WhatsApp AI Order Bot</div>
+        <!-- Restored Video Link -->
+        <a href="whatsapp-demo.mp4" target="_blank" class="pill pill-live">▶ Live client</a>
+      </div>
+      <div class="flow-line">
+        <span class="flow-step trigger">customer message</span><span class="flow-arrow">→</span>
+        <span class="flow-step">AI reads menu + intent</span><span class="flow-arrow">→</span>
+        <span class="flow-step">order placed + confirmed</span><span class="flow-arrow">→</span>
+        <span class="flow-step output">zero staff involvement</span>
+      </div>
+      <ul class="project-desc">
+        <li>Deployed for a real restaurant client — handles menu queries, orders, and confirmations autonomously</li>
+        <li>Cut manual order handling by 80%</li>
+      </ul>
+      <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">LangChain</span><span class="tag">WhatsApp Business API</span><span class="tag">Claude</span></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-head">
+        <div class="project-title">n8n Support Inbox Triage</div>
+        <div class="pill pill-live" style="background: rgba(0,0,0,0.05); color: var(--text-muted); border-color: var(--border);">Client work</div>
+      </div>
+      <div class="flow-line">
+        <span class="flow-step trigger">support email in</span><span class="flow-arrow">→</span>
+        <span class="flow-step">custom classifier (15 nodes)</span><span class="flow-arrow">→</span>
+        <span class="flow-step">Sheets log</span><span class="flow-arrow">→</span>
+        <span class="flow-step output">Gmail notify</span>
+      </div>
+      <ul class="project-desc">
+        <li>Built for Purple Merit Technologies to classify and route incoming support email</li>
+        <li>Custom TypeScript classifier node handles multi-category priority logic</li>
+      </ul>
+      <div class="tags"><span class="tag">n8n</span><span class="tag">TypeScript</span><span class="tag">Google Sheets</span><span class="tag">Gmail API</span></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-head">
+        <div class="project-title">UK Company Intelligence Platform</div>
+        <div class="pill pill-live" style="background: rgba(0,0,0,0.05); color: var(--text-muted); border-color: var(--border);">Data pipeline</div>
+      </div>
+      <div class="flow-line">
+        <span class="flow-step trigger">460K+ UK company records</span><span class="flow-arrow">→</span>
+        <span class="flow-step">validation pipeline</span><span class="flow-arrow">→</span>
+        <span class="flow-step output">31K+ qualified leads</span>
+      </div>
+      <ul class="project-desc">
+        <li>Classifies company websites as active, inactive, or high-value opportunities at scale</li>
+        <li>PostgreSQL-backed storage with FastAPI-driven retrieval</li>
+      </ul>
+      <div class="tags"><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">Python</span><span class="tag">Docker</span></div>
+    </div>
+
   </div>
 </section>
 
@@ -323,26 +295,38 @@
     <h2>What I build with</h2>
     <div class="stack-groups">
       <div class="stack-group">
-        <h3>Automation & Orchestration</h3>
-        <p style="font-size: 14px; color: var(--text-muted);">n8n, LangChain, Webhooks, REST APIs</p>
+        <h3>Automation &amp; Orchestration</h3>
+        <div>
+          <span class="stack-chip">n8n</span><span class="stack-chip">LangChain</span><span class="stack-chip">Webhooks</span><span class="stack-chip">REST APIs</span>
+        </div>
       </div>
       <div class="stack-group">
-        <h3>AI & LLMs</h3>
-        <p style="font-size: 14px; color: var(--text-muted);">Claude, OpenAI, Groq, RAG, Vector Embeddings</p>
+        <h3>AI &amp; LLMs</h3>
+        <div>
+          <span class="stack-chip">Claude</span><span class="stack-chip">OpenAI</span><span class="stack-chip">Groq</span><span class="stack-chip">RAG</span><span class="stack-chip">Vector Embeddings</span>
+        </div>
       </div>
       <div class="stack-group">
-        <h3>Backend & Data</h3>
-        <p style="font-size: 14px; color: var(--text-muted);">Python, FastAPI, Node.js, PostgreSQL, Redis</p>
+        <h3>Backend</h3>
+        <div>
+          <span class="stack-chip">Python</span><span class="stack-chip">FastAPI</span><span class="stack-chip">Node.js</span><span class="stack-chip">TypeScript</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <h3>Data &amp; Infrastructure</h3>
+        <div>
+          <span class="stack-chip">PostgreSQL</span><span class="stack-chip">Redis</span><span class="stack-chip">Docker</span><span class="stack-chip">Linux</span><span class="stack-chip">Git</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <section id="contact">
-  <div class="wrap" style="text-align: center;">
-    <div class="eyebrow">Output</div>
+  <div class="wrap" style="text-align: center; max-width: 600px; padding: 40px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;">
+    <div class="eyebrow" style="justify-content: center; display: flex;">Output</div>
     <h2>Have a repetitive process?</h2>
-    <p style="color: var(--text-muted); margin-bottom: 20px;">Send the brief — what the process looks like now, and what "done automatically" would mean for you.</p>
+    <p style="color: var(--text-muted); margin-bottom: 25px;">Send the brief — what the process looks like now, and what "done automatically" would mean for you.</p>
     <a href="mailto:mashooque.automation@gmail.com" class="btn">✉ mashooque.automation@gmail.com</a>
   </div>
 </section>
